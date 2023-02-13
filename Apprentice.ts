@@ -78,6 +78,19 @@ const enum KBitIrButtons {
 //% groups="['Motor', 'RGB-led', 'Neo-pixel', 'Sensor', 'Tone']"
 namespace kBit {
 
+    const CHANNEL = "apprentice_Car"
+
+    function sendJSON(json: any) {
+        const msg = JSON.stringify(json)
+        const buf = Buffer.fromUTF8(msg);
+        control.simmessages.send(CHANNEL, buf)
+    }
+
+    let test = {
+        'key':'value'
+    }
+    sendJSON(test);
+
     /**
      * used to control PCA9685
      */
