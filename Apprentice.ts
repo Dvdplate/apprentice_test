@@ -87,7 +87,7 @@ namespace kBit {
     }
 
     let test = {
-        'key':'value'
+        'type':'run'
     }
     sendJSON(test);
 
