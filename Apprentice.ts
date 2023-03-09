@@ -180,6 +180,14 @@ namespace kBit {
                 setPwm(0, 0, 0);
                 setPwm(3, 0, speed_value);  //control speed : 0---4095
                 setPwm(2, 0, 0);
+                sendJSON({
+                    "command" : {
+                        "type":"move",
+                        "state":"true",
+                        "direction":"forward",
+                        "power":speed_value
+                    }
+                });
                 break;
             case 1:  //run back
                 setPwm(1, 0, speed_value);  //control speed : 0---4095
@@ -215,6 +223,12 @@ namespace kBit {
         }
         setPwm(1, 0, 0);  //control speed : 0---4095
         setPwm(3, 0, 0);  //control speed : 0---4095
+        sendJSON({
+                    "command" : {
+                        "type":"move",
+                        "state":"false"
+                    }
+                });
     }
 
 
