@@ -87,7 +87,7 @@ namespace kBit {
     }
 
     let test = {
-        'event':'run'
+        'event':null
     }
     sendJSON(test);
 
