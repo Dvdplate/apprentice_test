@@ -86,11 +86,6 @@ namespace kBit {
         control.simmessages.send(CHANNEL, buf)
     }
 
-    let test = {
-        type:'run'
-    }
-    sendJSON(test);
-
     /**
      * used to control PCA9685
      */
