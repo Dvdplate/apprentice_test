@@ -359,6 +359,13 @@ namespace kBit {
             setPwm(6, 0, 4095);
             setPwm(4, 0, 4095);
         }
+        sendJSON({
+            "command" : {
+                "type":"led",
+                "assignment":"color",
+                "value": "col"
+            }
+        });
     }
     /**
      * set the rgb-led color via data
@@ -378,6 +385,18 @@ namespace kBit {
         setPwm(6, 0, R);
         setPwm(5, 0, G);
         setPwm(4, 0, B);
+
+        sendJSON({
+            "command" : {
+                "type":"led",
+                "assignment":"RGB",
+                "value": { 
+                    "R":R,
+                    "G":G,
+                    "B":B,
+                }
+            }
+        });
     }
     /**
      * turn off all rgb-led
