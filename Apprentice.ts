@@ -363,7 +363,7 @@ namespace kBit {
             "command" : {
                 "type":"led",
                 "assignment":"color",
-                "value": "col"
+                "value": col
             }
         });
     }
