@@ -391,9 +391,9 @@ namespace kBit {
                 "type":"led",
                 "assignment":"RGB",
                 "value": { 
-                    "R":R,
-                    "G":G,
-                    "B":B,
+                    "R":red,
+                    "G":green,
+                    "B":blue,
                 }
             }
         });
