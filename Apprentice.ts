@@ -220,6 +220,7 @@ namespace kBit {
                 sendJSON({
                     "command" : {
                         "type":"move",
+                        "method":"linear",
                         "state":"true",
                         "direction":"forward",
                         "power":speed_value
@@ -234,6 +235,7 @@ namespace kBit {
                 sendJSON({
                     "command" : {
                         "type":"move",
+                        "method":"linear",
                         "state":"true",
                         "direction":"back",
                         "power":speed_value
@@ -249,6 +251,7 @@ namespace kBit {
                 sendJSON({
                     "command" : {
                         "type":"move",
+                        "method":"linear",
                         "state":"true",
                         "direction":"left",
                         "power":speed_value
@@ -264,6 +267,7 @@ namespace kBit {
                 sendJSON({
                     "command" : {
                         "type":"move",
+                        "method":"linear",
                         "state":"true",
                         "direction":"right",
                         "power":speed_value
@@ -290,6 +294,7 @@ namespace kBit {
         sendJSON({
                     "command" : {
                         "type":"move",
+                        "method":"linear",
                         "state":"false"
                     }
                 });
