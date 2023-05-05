@@ -87,48 +87,6 @@ namespace kBit {
     }
     
     sendJSON({"initialise":"true"})
-    
-    control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_A, EventBusValue.MICROBIT_BUTTON_EVT_DOWN, function () {
-        sendJSON({
-                    "input" : {
-                        "type":"button",
-                        "id":"A",
-                        "state":"down"
-                    }
-                });
-    })
-    
-    control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_B, EventBusValue.MICROBIT_BUTTON_EVT_DOWN, function () {
-        sendJSON({
-                    "input" : {
-                        "type":"button",
-                        "id":"B",
-                        "state":"down"
-                    }
-                });
-    })
-    
-    control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_A, EventBusValue.MICROBIT_BUTTON_EVT_UP, function () {
-        sendJSON({
-                    "input" : {
-                        "type":"button",
-                        "id":"A",
-                        "state":"up"
-                    }
-                });
-    })
-    
-    control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_B, EventBusValue.MICROBIT_BUTTON_EVT_UP, function () {
-        sendJSON({
-                    "input" : {
-                        "type":"button",
-                        "id":"B",
-                        "state":"up"
-                    }
-                });
-    })
-    
-  
 
     /**
      * used to control PCA9685
