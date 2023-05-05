@@ -187,6 +187,7 @@ namespace kBit {
                     }
                 });
                 break;
+                break;
             case 1:  //run back
                 setPwm(1, 0, speed_value);  //control speed : 0---4095
                 setPwm(0, 0, 4095);
