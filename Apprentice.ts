@@ -352,10 +352,30 @@ namespace kBit {
         if (m == 0) {         //left side motor
             setPwm(1, 0, 0);  //control speed : 0---4095
             setPwm(0, 0, 0);
+            sendJSON({
+                        "command" : {
+                            "type":"move",
+                            "state":"true",
+                            "left": {
+                                "direction":"forward,
+                                "power":0
+                            }
+                        }
+                    });
         }
         if (m == 1) {         //right side motor
             setPwm(3, 0, 0);  //control speed : 0---4095
             setPwm(2, 0, 0);
+            sendJSON({
+                        "command" : {
+                            "type":"move",
+                            "state":"true",
+                            "right": {
+                                "direction":"forward,
+                                "power":0
+                            }
+                        }
+                    });
         }
     }
 
