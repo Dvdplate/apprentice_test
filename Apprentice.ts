@@ -202,11 +202,11 @@ namespace kBit {
                         "type":"move",
                         "state":"true",
                         "left":{
-                            "direction":"back",
+                            "direction":"backwards",
                             "power":speed_value
                         },
                         "right": {
-                            "direction":"back",
+                            "direction":"backwards",
                             "power":speed_value
                         }
                     }
@@ -222,7 +222,7 @@ namespace kBit {
                         "type":"move",
                         "state":"true",
                         "left":{
-                            "direction":"back",
+                            "direction":"backwards",
                             "power":speed_value
                         },
                         "right": {
@@ -246,7 +246,7 @@ namespace kBit {
                             "power":speed_value
                         },
                         "right": {
-                            "direction":"back",
+                            "direction":"backwards",
                             "power":speed_value
                         }
                     }
