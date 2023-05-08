@@ -180,13 +180,17 @@ namespace kBit {
                 sendJSON({
                     "command" : {
                         "type":"move",
-                        "method":"linear",
                         "state":"true",
-                        "direction":"forward",
-                        "power":speed_value
+                        "left":{
+                            "direction":"forward",
+                            "power":speed_value
+                        },
+                        "right": {
+                            "direction":"forward",
+                            "power":speed_value
+                        }
                     }
                 });
-                break;
                 break;
             case 1:  //run back
                 setPwm(1, 0, speed_value);  //control speed : 0---4095
@@ -196,13 +200,17 @@ namespace kBit {
                 sendJSON({
                     "command" : {
                         "type":"move",
-                        "method":"linear",
                         "state":"true",
-                        "direction":"back",
-                        "power":speed_value
+                        "left":{
+                            "direction":"back",
+                            "power":speed_value
+                        },
+                        "right": {
+                            "direction":"back",
+                            "power":speed_value
+                        }
                     }
                 });
-                break;
                 break;
             case 2:  //turn left
                 setPwm(1, 0, speed_value);  //control speed : 0---4095
@@ -212,13 +220,17 @@ namespace kBit {
                 sendJSON({
                     "command" : {
                         "type":"move",
-                        "method":"linear",
                         "state":"true",
-                        "direction":"left",
-                        "power":speed_value
+                        "left":{
+                            "direction":"back",
+                            "power":speed_value
+                        },
+                        "right": {
+                            "direction":"forward",
+                            "power":speed_value
+                        }
                     }
                 });
-                break;
                 break;
             case 3:  //turn right
                 setPwm(1, 0, speed_value);  //control speed : 0---4095
@@ -228,13 +240,17 @@ namespace kBit {
                 sendJSON({
                     "command" : {
                         "type":"move",
-                        "method":"linear",
                         "state":"true",
-                        "direction":"right",
-                        "power":speed_value
+                        "left":{
+                            "direction":"forward",
+                            "power":speed_value
+                        },
+                        "right": {
+                            "direction":"back",
+                            "power":speed_value
+                        }
                     }
                 });
-                break;
                 break;
             default: break;
         }
@@ -255,7 +271,6 @@ namespace kBit {
         sendJSON({
                     "command" : {
                         "type":"move",
-                        "method":"linear",
                         "state":"false"
                     }
                 });
@@ -275,25 +290,51 @@ namespace kBit {
         if (!PCA9685_Initialized) {
             initPCA9685();
         }
+        let direction;
+        if (md == 0) { direction = "forward" }
+        if (md == 1) { direction = "backwards" }
+        
         let speed_value = Math.map(speed, 0, 100, 0, 4095);
-        if (m == 0 && md == 0) {
-            setPwm(1, 0, speed_value);  //control speed : 0---4095
-            setPwm(0, 0, 0);
+        if (m == 0) {
+            if (md == 0) {
+                setPwm(1, 0, speed_value);  //control speed : 0---4095
+                setPwm(0, 0, 0);
+            }
+            else if (md == 1) {
+                setPwm(1, 0, speed_value);  //control speed : 0---4095
+                setPwm(0, 0, 4095);
+            }
+            sendJSON({
+                    "command" : {
+                        "type":"move",
+                        "state":"true",
+                        "left":{
+                            "direction":direction,
+                            "power":speed_value
+                        }
+                    }
+                });
         }
-        if (m == 0 && md == 1) {
-            setPwm(1, 0, speed_value);  //control speed : 0---4095
-            setPwm(0, 0, 4095);
+        else if (m == 1) {
+            if (md == 0) {
+                setPwm(3, 0, speed_value);  //control speed : 0---4095
+                setPwm(2, 0, 0);
+            }
+            else if (md == 1) {
+                setPwm(3, 0, speed_value);  //control speed : 0---4095
+                setPwm(2, 0, 4095);
+            }
+            sendJSON({
+                    "command" : {
+                        "type":"move",
+                        "state":"true",
+                        "right": {
+                            "direction":direction,
+                            "power":speed_value
+                        }
+                    }
+                });
         }
-
-        if (m == 1 && md == 0) {
-            setPwm(3, 0, speed_value);  //control speed : 0---4095
-            setPwm(2, 0, 0);
-        }
-        if (m == 1 && md == 1) {
-            setPwm(3, 0, speed_value);  //control speed : 0---4095
-            setPwm(2, 0, 4095);
-        }
-
     }
 
 
