@@ -357,7 +357,7 @@ namespace kBit {
                             "type":"move",
                             "state":"true",
                             "left": {
-                                "direction":"forward,
+                                "direction":"forward",
                                 "power":0
                             }
                         }
@@ -371,7 +371,7 @@ namespace kBit {
                             "type":"move",
                             "state":"true",
                             "right": {
-                                "direction":"forward,
+                                "direction":"forward",
                                 "power":0
                             }
                         }
