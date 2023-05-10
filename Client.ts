@@ -7,6 +7,8 @@ namespace kBit {
         }
         else {
             console.log(buf)
+            console.log(buf.data)
+            console.log(buf.sensorData)
         }
     })
 }
