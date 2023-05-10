@@ -1,6 +1,6 @@
 namespace kBit {
-    control.simmessages.onReceived("apprentice_Car", (data: Buffer) => {
-        let JSONString = data.toString()
-        console.log(JSONString)
+    control.simmessages.onReceived("docs", (data: Buffer) => {
+        const msg = JSON.parse(data.toString())
+        console.log(msg)
     })
 }
