@@ -75,7 +75,7 @@ const enum KBitIrButtons {
 }
 
 //% color="#ff6800" icon="\uf1b9" weight=15
-//% groups="['Motor', 'RGB-led', 'Neo-pixel', 'Sensor', 'Tone']"
+//% groups="['Motor', 'RGB-led', 'Neo-pixel', 'Sensor', 'Tone', 'Simulator']"
 namespace kBit {
 
     const CHANNEL = "apprentice_Car"
