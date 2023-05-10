@@ -20,52 +20,12 @@ namespace kBit {
     })
 
     /**
-     * infrared obstacle sensor
-     * @param LR which infared sensor to use
-     */
-    //% block= "simulator $lr obstacle sensor "
-    //% group="Simulator" weight=69
-    export function Simobstacle(lr: KBitMotorObs): number {
-        return null;
-    }
-
-    ////////////////////////////////////////////
-
-    /**
-     * individual infared line sensors
-     * @param LR which infared sensor to use
-     */
-    //% block= "simulator $lr line sensor "
-    //% group="Simulator" weight=69
-    export function SimlineSensor(lr: KBitMotorObs): number {
-        return null;
-    }
-
-
-    /**
-     * Line following block, returns value needed of needed direction
-     * 3: move forward
-     * 2: turn left
-     * 1: turn right
-     */
-    //% block= "simulator line tracking"
-    //% group="Simulator" weight=68
-    export function SimlineTracking(): number {
-        return null;
-    }
-
-    /**
-     * Ultrasonic sensor
-     */
-    const TRIG_PIN = DigitalPin.P14;
-    const ECHO_PIN = DigitalPin.P15;
-    let lastTime = 0;
-    /**
-     * Ultrasonic Sensor to measure distance
-     */
-    //% block= "simulator ultrasonic"
-    //% group="Simulator" weight=67
-    export function Simultra(): number {
+    * ultrasonic sensor to measure ambient light
+    */
+    //% block="sim ultrasonic"
+    //% group="Simulator" weight=66
+    export function SimulatorUltrasonic(): number {
         return kBit.ultrasonicSimData
     }
+
 }
