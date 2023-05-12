@@ -573,7 +573,8 @@ namespace kBit {
         lastTime = t;
         //2020-7-6
         //It would normally divide by 58, because the pins.pulseIn() function has an error, so it's divided by 58
-        return Math.round(ret / 40);
+        kBit.ultrasonicSimData = Math.round(ret / 40);
+        return kBit.ultrasonicSimData
     }
     /**
      * photoresistance sensor to measure ambient light
