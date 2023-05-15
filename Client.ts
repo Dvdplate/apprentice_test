@@ -17,6 +17,8 @@ namespace kBit {
         kBit.rightObstacleSimData = data.rightIRObstacleSensor;
         kBit.leftLineSimData = data.leftIRLineSensor
         kBit.rightLineSimData = data.rightIRLineSensor
+
+        console.log(kBit.ultrasonicSimData)
     })
 
     /**
