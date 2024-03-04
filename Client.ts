@@ -12,7 +12,7 @@ namespace kBit {
         }
         let data = JSON.parse(stringMsg)
 
-        if (data.ultrasonicDistance) kBit.ultrasonicSimData = data.ultrasonicDistance;
+        if (data.ultrasonicDistance != undefined) { kBit.ultrasonicSimData = data.ultrasonicDistance; }
         kBit.leftObstacleSimData = data.leftIRObstacleSensor;
         kBit.rightObstacleSimData = data.rightIRObstacleSensor;
         kBit.leftLineSimData = data.leftIRLineSensor
