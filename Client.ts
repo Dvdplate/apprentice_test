@@ -12,11 +12,11 @@ namespace kBit {
         }
         let data = JSON.parse(stringMsg)
 
-        if (data.ultrasonicDistance != undefined) { kBit.ultrasonicSimData = data.ultrasonicDistance; }
-        kBit.leftObstacleSimData = data.leftIRObstacleSensor;
-        kBit.rightObstacleSimData = data.rightIRObstacleSensor;
-        kBit.leftLineSimData = data.leftIRLineSensor
-        kBit.rightLineSimData = data.rightIRLineSensor
+        if ( data.ultrasonicDistance != undefined) { kBit.ultrasonicSimData = data.ultrasonicDistance; }
+        if ( data.leftIRObstacleSensor != undefined ) {kBit.leftObstacleSimData = data.leftIRObstacleSensor; }
+        if ( data.rightIRObstacleSensor != undefined ) { kBit.rightObstacleSimData = data.rightIRObstacleSensor; }
+        if ( data.leftIRLineSensor != undefined ) { kBit.leftLineSimData = data.leftIRLineSensor }
+        if ( data.rightIRLineSensor != undefined ) { kBit.rightLineSimData = data.rightIRLineSensor }
     })
 
     /**
