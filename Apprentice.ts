@@ -480,6 +480,14 @@ namespace kBit {
         setPwm(6, 0, 4095);
         setPwm(5, 0, 4095);
         setPwm(4, 0, 4095);
+
+        sendJSON({
+            "command" : {
+                "type":"led",
+                "assignment":"color",
+                "value": "off"
+            }
+        });
     }
 
     /////////////////////////////////////////////////////
