@@ -17,8 +17,6 @@ namespace kBit {
         kBit.rightObstacleSimData = data.rightIRObstacleSensor;
         kBit.leftLineSimData = data.leftIRLineSensor
         kBit.rightLineSimData = data.rightIRLineSensor
-
-        console.log(kBit.ultrasonicSimData)
     })
 
     /**
@@ -27,6 +25,7 @@ namespace kBit {
     //% block="sim ultrasonic"
     //% group="Simulator" weight=66
     export function SimulatorUltrasonic(): number {
+        console.log(kBit.ultrasonicSimData)
         return kBit.ultrasonicSimData
     }
 
