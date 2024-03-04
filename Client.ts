@@ -25,7 +25,6 @@ namespace kBit {
     //% block="sim ultrasonic"
     //% group="Simulator" weight=66
     export function SimulatorUltrasonic(): number {
-        console.log(kBit.ultrasonicSimData)
         return kBit.ultrasonicSimData
     }
 
