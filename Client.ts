@@ -1,5 +1,5 @@
 namespace kBit {
-    export let ultrasonicSimData: number;
+    export let ultrasonicSimData: number = 52.34;
     export let leftObstacleSimData: boolean;
     export let rightObstacleSimData: boolean;
     export let leftLineSimData: boolean;
